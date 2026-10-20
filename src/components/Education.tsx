@@ -16,7 +16,7 @@ const educationData = [
     id: "02",
     period: "2021 – 2023",
     status: "COMPLETED",
-    title: "Secondary School Certificate",
+    title: "Secondary School Certificate (Science)",
     institution: "Sonagazi Md.Saber Govt. Pilot High School",
     description:
       "Built my academic foundation and developed an interest in technology and problem-solving.",
