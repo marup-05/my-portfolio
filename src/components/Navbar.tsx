@@ -1,4 +1,3 @@
-
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -39,7 +38,8 @@ function Navbar() {
           {/* Resume button */}
           <a
             href="/resume.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="col-start-2 row-start-1 inline-flex items-center justify-self-end gap-2 rounded-xl border border-purple-400/30 bg-gradient-to-r from-purple-600 to-violet-700 px-3 py-2.5 text-xs font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-500/25 sm:px-5 sm:text-sm md:col-start-3"
           >
             Resume <span aria-hidden="true">↗</span>

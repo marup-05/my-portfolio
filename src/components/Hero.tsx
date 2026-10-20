@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
@@ -111,10 +110,9 @@ function Hero() {
             variants={introVariants}
             className="mx-auto mt-6 max-w-xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8 md:mx-0"
           >
-            I'm passionate about building modern, responsive, and
-            user-friendly web experiences. I'm continuously learning
-            web development and turning ideas into interactive
-            digital projects.
+            I'm passionate about building modern, responsive, and user-friendly
+            web experiences. I'm continuously learning web development and
+            turning ideas into interactive digital projects.
           </motion.p>
 
           {/* Action buttons */}
@@ -131,10 +129,11 @@ function Hero() {
 
             <a
               href="/resume.pdf"
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl border border-purple-400/40 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:border-purple-400 hover:bg-purple-500/10 sm:px-6 sm:text-base"
             >
-              View Resume <span aria-hidden="true">↓</span>
+              View Resume <span aria-hidden="true">↗</span>
             </a>
           </motion.div>
 
@@ -221,7 +220,7 @@ function Hero() {
             >
               <p className="text-xs text-gray-400">Currently learning</p>
               <p className="mt-1 text-sm font-semibold text-purple-300">
-                Node & Express.js 
+                Node & Express.js
               </p>
             </motion.div>
           </motion.div>
