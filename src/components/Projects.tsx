@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "motion/react";
@@ -38,26 +37,45 @@ const projects = [
   },
   {
     number: "03",
-    title: "Book Vibe",
-    category: "Book Discovery Application",
+    title: "BookNook",
+    category: "Full-Stack Library Management Platform",
     description:
-      "A book-related web application designed to provide an engaging browsing experience with a clean, responsive UI.",
-    image: "/book.png",
-    tech: ["Next.js", "React", "JavaScript", "daisyUI", "Tailwind CSS"],
-    github: "https://github.com/marup-05/book-vibe",
-    demo: "https://book-vibe-iz3j.vercel.app/",
+      "A full-stack library management platform where users can explore books, borrow and return books, manage their personal library, and contribute new titles. Built with Next.js, Express.js, MongoDB, and Better Auth.",
+    image: "/books.png",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Express.js",
+      "MongoDB",
+      "Better Auth",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
+    github: "https://github.com/marup-05/booknook-frontend",
+    backendGithub: "https://github.com/marup-05/booknook-backend",
+    demo: "https://booknook-frontend-iota.vercel.app/",
     featured: false,
   },
   {
     number: "04",
-    title: "DevStack",
-    category: "Developer Resource Platform",
+    title: "Wanderlust",
+    category: "Full-Stack Travel Booking Platform",
     description:
-      "A React-based web project built with TypeScript and Tailwind CSS, featuring a responsive interface and reusable UI components.",
-    image: "/dev.png",
-    tech: ["React", "TypeScript", "daisyUI", "Tailwind CSS"],
-    github: "https://github.com/marup-05/b14-as5",
-    demo: "https://as-5-devstack.netlify.app/",
+      "A full-stack travel booking platform where users can explore destinations, book trips, and manage their bookings. Built with Next.js, Express.js, MongoDB, and Better Auth.",
+    image: "/wanderlust.png",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Express.js",
+      "MongoDB",
+      "Better Auth",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/marup-05/wanderlust-frontend.git",
+    backendGithub: "https://github.com/marup-05/wanderlust-server.git",
+    demo: "https://wanderlust-phi-weld.vercel.app/",
     featured: false,
   },
 ];
@@ -174,9 +192,23 @@ const Projects = () => {
                     className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:border-purple-400/50 hover:bg-purple-500/10"
                   >
                     <span className="font-bold">GH</span>
-                    GitHub
+                    Frontend Repo
                     <span>↗</span>
                   </a>
+
+                  {"backendGithub" in project && (
+                    <a
+                      href={project.backendGithub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} backend GitHub repository`}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:border-purple-400/50 hover:bg-purple-500/10"
+                    >
+                      <span className="font-bold">GH</span>
+                      Backend Repo
+                      <span>↗</span>
+                    </a>
+                  )}
 
                   <a
                     href={project.demo}

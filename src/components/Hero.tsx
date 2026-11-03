@@ -1,14 +1,31 @@
 import { useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "motion/react";
+
+import {
+  SiHtml5,
+  SiCss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiExpress,
+} from "react-icons/si";
 
 const techStack = [
-  { name: "HTML", icon: "5", color: "text-orange-400" },
-  { name: "CSS", icon: "3", color: "text-blue-400" },
-  { name: "JavaScript", icon: "JS", color: "text-yellow-300" },
-  { name: "TypeScript", icon: "TS", color: "text-sky-400" },
-  { name: "React", icon: "⚛", color: "text-cyan-300" },
-  { name: "Next.js", icon: "N", color: "text-white" },
-  { name: "Tailwind CSS", icon: "≈", color: "text-cyan-300" },
+  { name: "HTML", icon: SiHtml5, color: "text-orange-400" },
+  { name: "CSS", icon: SiCss, color: "text-blue-400" },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-300" },
+  { name: "TypeScript", icon: SiTypescript, color: "text-sky-400" },
+  { name: "React", icon: SiReact, color: "text-cyan-300" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300" },
+  { name: "Express.js", icon: SiExpress, color: "text-gray-200" },
 ];
 
 function Hero() {
@@ -153,28 +170,30 @@ function Hero() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2.5 md:justify-start">
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={tech.name}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.45,
-                    delay: 0.75 + index * 0.08,
-                  }}
-                  className="group flex min-w-[76px] flex-col items-center gap-2 rounded-xl border border-purple-400/20 bg-[#130E25]/80 px-3 py-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:bg-purple-500/15 sm:min-w-[84px]"
-                >
-                  <span
-                    className={`flex h-8 w-8 items-center justify-center text-xl font-extrabold ${tech.color}`}
-                  >
-                    {tech.icon}
-                  </span>
+              {techStack.map((tech, index) => {
+                const Icon = tech.icon;
 
-                  <span className="text-center text-[11px] font-medium text-gray-300 group-hover:text-white sm:text-xs">
-                    {tech.name}
-                  </span>
-                </motion.div>
-              ))}
+                return (
+                  <motion.div
+                    key={tech.name}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.45,
+                      delay: 0.75 + index * 0.08,
+                    }}
+                    className="group flex min-w-[76px] flex-col items-center gap-2 rounded-xl border border-purple-400/20 bg-[#130E25]/80 px-3 py-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:bg-purple-500/15 sm:min-w-[84px]"
+                  >
+                    <Icon
+                      className={`h-8 w-8 transition-transform duration-300 group-hover:scale-110 ${tech.color}`}
+                    />
+
+                    <span className="text-center text-[11px] font-medium text-gray-300 group-hover:text-white sm:text-xs">
+                      {tech.name}
+                    </span>
+                  </motion.div>
+                );
+              })}
             </div>
 
             <p className="mt-3 text-center text-xs text-gray-500 md:text-left">

@@ -1,69 +1,187 @@
 import { motion } from "motion/react";
 
+import {
+  SiHtml5,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiDaisyui,
+  SiShadcnui,
+  SiHeroui,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiGit,
+  SiGithub,
+  SiFigma,
+  SiVercel,
+  SiNetlify,
+} from "react-icons/si";
+
+import { FaCss3Alt, FaShieldAlt, FaWindows } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
+
 const skillGroups = [
   {
-    number: "01",
     title: "Frontend Development",
-    description: "Building modern, responsive and interactive web interfaces.",
+    description:
+      "Building modern, responsive and interactive web interfaces.",
     skills: [
-      { name: "HTML5", icon: "5", color: "text-orange-400", detail: "Semantic markup" },
-      { name: "CSS3", icon: "3", color: "text-blue-400", detail: "Modern styling" },
-      { name: "JavaScript", icon: "JS", color: "text-yellow-300", detail: "Web interactivity" },
-      { name: "ES6+", icon: "ES", color: "text-yellow-200", detail: "Modern JavaScript" },
-      { name: "TypeScript", icon: "TS", color: "text-sky-400", detail: "Typed JavaScript" },
-      { name: "React", icon: "⚛", color: "text-cyan-300", detail: "UI development" },
-      { name: "Next.js", icon: "N", color: "text-white", detail: "React framework" },
-      { name: "Better Auth", icon: "BA", color: "text-violet-300", detail: "Authentication" },
+      {
+        name: "HTML5",
+        icon: SiHtml5,
+        color: "text-orange-400",
+        detail: "Semantic markup",
+      },
+      {
+        name: "CSS3",
+        icon: FaCss3Alt,
+        color: "text-blue-400",
+        detail: "Modern styling",
+      },
+      {
+        name: "JavaScript",
+        icon: SiJavascript,
+        color: "text-yellow-300",
+        detail: "Web interactivity",
+      },
+      {
+        name: "ES6+",
+        icon: SiJavascript,
+        color: "text-yellow-200",
+        detail: "Modern JavaScript",
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
+        color: "text-sky-400",
+        detail: "Typed JavaScript",
+      },
+      {
+        name: "React",
+        icon: SiReact,
+        color: "text-cyan-300",
+        detail: "UI development",
+      },
+      {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        color: "text-white",
+        detail: "React framework",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+        color: "text-cyan-300",
+        detail: "Utility-first CSS",
+      },
+      {
+        name: "HeroUI",
+        icon: SiHeroui,
+        color: "text-violet-300",
+        detail: "React UI library",
+      },
+      {
+        name: "daisyUI",
+        icon: SiDaisyui,
+        color: "text-pink-300",
+        detail: "UI components",
+      },
+      {
+        name: "shadcn/ui",
+        icon: SiShadcnui,
+        color: "text-white",
+        detail: "Reusable components",
+      },
     ],
   },
   {
-    number: "02",
     title: "Backend Development",
-    description: "Learning server-side development and API building.",
+    description:
+      "Building server-side applications, APIs and database systems.",
     skills: [
-      { name: "Node.js", icon: "JS", color: "text-green-400", detail: "JavaScript runtime" },
-      { name: "Express.js", icon: "EX", color: "text-gray-200", detail: "Backend framework" },
+      {
+        name: "Node.js",
+        icon: SiNodedotjs,
+        color: "text-green-400",
+        detail: "JavaScript runtime",
+      },
+      {
+        name: "Express.js",
+        icon: SiExpress,
+        color: "text-gray-200",
+        detail: "Backend framework",
+      },
+      {
+        name: "MongoDB",
+        icon: SiMongodb,
+        color: "text-green-400",
+        detail: "NoSQL database",
+      },
+      {
+        name: "MySQL",
+        icon: SiMysql,
+        color: "text-sky-300",
+        detail: "Relational database",
+      },
+      {
+        name: "Better Auth",
+        icon: FaShieldAlt,
+        color: "text-violet-300",
+        detail: "Authentication",
+      },
     ],
   },
   {
-    number: "03",
-    title: "Styling & UI",
-    description: "Creating clean layouts and reusable UI components.",
-    skills: [
-      { name: "Tailwind CSS", icon: "≈", color: "text-cyan-300", detail: "Utility-first CSS" },
-      { name: "daisyUI", icon: "D", color: "text-pink-300", detail: "UI components" },
-      { name: "shadcn/ui", icon: "S", color: "text-white", detail: "Reusable components" },
-      { name: "HeroUI", icon: "H", color: "text-violet-300", detail: "React components" },
-    ],
-  },
-  {
-    number: "04",
     title: "Tools & Design",
-    description: "Tools for coding, version control and interface design.",
+    description:
+      "Tools for coding, version control, design and deployment.",
     skills: [
-      { name: "Git", icon: "G", color: "text-orange-400", detail: "Version control" },
-      { name: "GitHub", icon: "GH", color: "text-white", detail: "Code collaboration" },
-      { name: "VS Code", icon: "VS", color: "text-blue-400", detail: "Code editor" },
-      { name: "Figma", icon: "F", color: "text-pink-300", detail: "UI/UX design" },
-      { name: "Windows", icon: "W", color: "text-sky-300", detail: "Operating system" },
-    ],
-  },
-  {
-    number: "05",
-    title: "Deployment Platform",
-    description: "Deploying projects and making web apps accessible online.",
-    skills: [
-      { name: "Vercel", icon: "V", color: "text-white", detail: "Web deployment" },
-      { name: "Netlify", icon: "N", color: "text-teal-300", detail: "Web deployment" },
-    ],
-  },
-  {
-    number: "06",
-    title: "Database",
-    description: "Learning to store, manage and retrieve application data.",
-    skills: [
-      { name: "MongoDB", icon: "M", color: "text-green-400", detail: "NoSQL database" },
-      { name: "MySQL", icon: "SQL", color: "text-sky-300", detail: "Relational database" },
+      {
+        name: "Git",
+        icon: SiGit,
+        color: "text-orange-400",
+        detail: "Version control",
+      },
+      {
+        name: "GitHub",
+        icon: SiGithub,
+        color: "text-white",
+        detail: "Code collaboration",
+      },
+      {
+        name: "VS Code",
+        icon: VscVscode,
+        color: "text-blue-400",
+        detail: "Code editor",
+      },
+      {
+        name: "Figma",
+        icon: SiFigma,
+        color: "text-pink-300",
+        detail: "UI/UX design",
+      },
+      {
+        name: "Windows",
+        icon: FaWindows,
+        color: "text-sky-300",
+        detail: "Operating system",
+      },
+      {
+        name: "Vercel",
+        icon: SiVercel,
+        color: "text-white",
+        detail: "Web deployment",
+      },
+      {
+        name: "Netlify",
+        icon: SiNetlify,
+        color: "text-teal-300",
+        detail: "Web deployment",
+      },
     ],
   },
 ];
@@ -72,7 +190,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -80,7 +198,7 @@ const containerVariants = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 24,
+    y: 30,
   },
   visible: {
     opacity: 1,
@@ -106,10 +224,10 @@ function Skills() {
       <div className="mx-auto max-w-7xl">
         {/* Section heading */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.65 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
           className="mx-auto mb-14 max-w-2xl text-center sm:mb-16"
         >
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-purple-400/25 bg-purple-500/10 px-4 py-2 text-xs font-medium text-purple-200 sm:text-sm">
@@ -133,92 +251,79 @@ function Skills() {
           <div className="mx-auto mt-7 h-px w-24 bg-gradient-to-r from-transparent via-purple-400 to-transparent" />
         </motion.div>
 
-        {/* Skills categories */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.05 }}
-          className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3"
-        >
+        {/* Skill Categories */}
+        <div className="space-y-14 sm:space-y-16">
           {skillGroups.map((group) => (
-            <motion.article
-              key={group.number}
-              variants={cardVariants}
-              className="group relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-purple-400/20 bg-[#100C1F]/80 p-5 shadow-lg shadow-purple-950/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/50 hover:shadow-xl hover:shadow-purple-950/20 sm:p-6"
-            >
-              {/* Card glow */}
-              <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-purple-500/10 via-transparent to-violet-500/5 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
-
+            <div key={group.title}>
               {/* Category heading */}
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <span className="text-xs font-bold tracking-[0.2em] text-purple-400">
-                    CATEGORY {group.number}
-                  </span>
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6 }}
+                className="mb-8 text-center"
+              >
+                <h3 className="text-2xl font-bold text-white sm:text-3xl">
+                  {group.title}
+                </h3>
 
-                  <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
-                    {group.title}
-                  </h3>
-                </div>
+                <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-gray-400 sm:text-base">
+                  {group.description}
+                </p>
+              </motion.div>
 
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-purple-400/20 bg-purple-500/10 text-sm font-bold text-purple-300 transition-transform duration-300 group-hover:rotate-6">
-                  {group.number}
-                </div>
-              </div>
+              {/* Technology Cards */}
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.08 }}
+                className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+              >
+                {group.skills.map((skill) => {
+                  const Icon = skill.icon;
 
-              <p className="mt-3 min-h-12 text-sm leading-6 text-gray-400">
-                {group.description}
-              </p>
-
-              <div className="my-5 h-px bg-gradient-to-r from-purple-400/30 via-purple-400/10 to-transparent" />
-
-              {/* Skills list */}
-              <div className="grid grid-cols-2 gap-3">
-                {group.skills.map((skill, index) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.045,
-                    }}
-                    className="flex min-w-0 items-center gap-2.5 rounded-xl border border-white/[0.07] bg-black/20 p-3 transition-all duration-300 hover:border-purple-400/40 hover:bg-purple-500/[0.08] sm:gap-3 sm:p-3.5"
-                  >
-                    <div
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.04] text-sm font-extrabold ${skill.color}`}
+                  return (
+                    <motion.article
+                      key={skill.name}
+                      variants={cardVariants}
+                      className="group relative flex min-h-[220px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-blue-400/10 bg-[#0B1020]/80 px-6 py-8 text-center shadow-lg shadow-blue-950/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-[#10182B] hover:shadow-xl hover:shadow-blue-950/20"
                     >
-                      {skill.icon}
-                    </div>
+                      {/* Card glow */}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-500/[0.04] via-transparent to-purple-500/[0.04] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                    <div className="min-w-0">
-                      <h4 className="truncate text-xs font-semibold text-gray-200 sm:text-sm">
+                      {/* Technology Icon */}
+                      <Icon
+                        className={`relative mb-6 h-12 w-12 transition-transform duration-300 group-hover:scale-110 ${skill.color}`}
+                      />
+
+                      {/* Technology Name */}
+                      <h4 className="relative text-lg font-bold text-white sm:text-xl">
                         {skill.name}
                       </h4>
 
-                      <p className="mt-1 text-[10px] leading-4 text-gray-500 sm:text-[11px]">
+                      {/* Short Description */}
+                      <p className="relative mt-4 max-w-[260px] text-sm leading-6 text-blue-300/90">
                         {skill.detail}
                       </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
 
-              {/* Bottom hover accent */}
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-purple-500 to-fuchsia-400 transition-all duration-500 group-hover:w-full" />
-            </motion.article>
+                      {/* Bottom hover accent */}
+                      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-500 group-hover:w-full" />
+                    </motion.article>
+                  );
+                })}
+              </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Closing text */}
         <motion.p
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-10 text-center text-xs leading-6 text-gray-500 sm:mt-12 sm:text-sm"
+          transition={{ duration: 0.55 }}
+          className="mt-14 text-center text-xs leading-6 text-gray-500 sm:mt-16 sm:text-sm"
         >
           Always learning, always building, always improving.
           <span className="ml-2 text-purple-300">✦</span>
