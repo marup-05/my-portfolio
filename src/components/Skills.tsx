@@ -1,3 +1,4 @@
+
 import { motion } from "motion/react";
 
 import {
@@ -30,72 +31,17 @@ const skillGroups = [
     description:
       "Building modern, responsive and interactive web interfaces.",
     skills: [
-      {
-        name: "HTML5",
-        icon: SiHtml5,
-        color: "text-orange-400",
-        detail: "Semantic markup",
-      },
-      {
-        name: "CSS3",
-        icon: FaCss3Alt,
-        color: "text-blue-400",
-        detail: "Modern styling",
-      },
-      {
-        name: "JavaScript",
-        icon: SiJavascript,
-        color: "text-yellow-300",
-        detail: "Web interactivity",
-      },
-      {
-        name: "ES6+",
-        icon: SiJavascript,
-        color: "text-yellow-200",
-        detail: "Modern JavaScript",
-      },
-      {
-        name: "TypeScript",
-        icon: SiTypescript,
-        color: "text-sky-400",
-        detail: "Typed JavaScript",
-      },
-      {
-        name: "React",
-        icon: SiReact,
-        color: "text-cyan-300",
-        detail: "UI development",
-      },
-      {
-        name: "Next.js",
-        icon: SiNextdotjs,
-        color: "text-white",
-        detail: "React framework",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: SiTailwindcss,
-        color: "text-cyan-300",
-        detail: "Utility-first CSS",
-      },
-      {
-        name: "HeroUI",
-        icon: SiHeroui,
-        color: "text-violet-300",
-        detail: "React UI library",
-      },
-      {
-        name: "daisyUI",
-        icon: SiDaisyui,
-        color: "text-pink-300",
-        detail: "UI components",
-      },
-      {
-        name: "shadcn/ui",
-        icon: SiShadcnui,
-        color: "text-white",
-        detail: "Reusable components",
-      },
+      { name: "HTML5", icon: SiHtml5, color: "text-orange-400", detail: "Semantic markup" },
+      { name: "CSS3", icon: FaCss3Alt, color: "text-blue-400", detail: "Modern styling" },
+      { name: "JavaScript", icon: SiJavascript, color: "text-yellow-300", detail: "Web interactivity" },
+      { name: "ES6+", icon: SiJavascript, color: "text-yellow-200", detail: "Modern JavaScript" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-sky-400", detail: "Typed JavaScript" },
+      { name: "React", icon: SiReact, color: "text-cyan-300", detail: "UI development" },
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white", detail: "React framework" },
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300", detail: "Utility-first CSS" },
+      { name: "HeroUI", icon: SiHeroui, color: "text-violet-300", detail: "React UI library" },
+      { name: "daisyUI", icon: SiDaisyui, color: "text-pink-300", detail: "UI components" },
+      { name: "shadcn/ui", icon: SiShadcnui, color: "text-white", detail: "Reusable components" },
     ],
   },
   {
@@ -103,36 +49,11 @@ const skillGroups = [
     description:
       "Building server-side applications, APIs and database systems.",
     skills: [
-      {
-        name: "Node.js",
-        icon: SiNodedotjs,
-        color: "text-green-400",
-        detail: "JavaScript runtime",
-      },
-      {
-        name: "Express.js",
-        icon: SiExpress,
-        color: "text-gray-200",
-        detail: "Backend framework",
-      },
-      {
-        name: "MongoDB",
-        icon: SiMongodb,
-        color: "text-green-400",
-        detail: "NoSQL database",
-      },
-      {
-        name: "MySQL",
-        icon: SiMysql,
-        color: "text-sky-300",
-        detail: "Relational database",
-      },
-      {
-        name: "Better Auth",
-        icon: FaShieldAlt,
-        color: "text-violet-300",
-        detail: "Authentication",
-      },
+      { name: "Node.js", icon: SiNodedotjs, color: "text-green-400", detail: "JavaScript runtime" },
+      { name: "Express.js", icon: SiExpress, color: "text-gray-200", detail: "Backend framework" },
+      { name: "MongoDB", icon: SiMongodb, color: "text-green-400", detail: "NoSQL database" },
+      { name: "MySQL", icon: SiMysql, color: "text-sky-300", detail: "Relational database" },
+      { name: "Better Auth", icon: FaShieldAlt, color: "text-violet-300", detail: "Authentication" },
     ],
   },
   {
@@ -140,48 +61,13 @@ const skillGroups = [
     description:
       "Tools for coding, version control, design and deployment.",
     skills: [
-      {
-        name: "Git",
-        icon: SiGit,
-        color: "text-orange-400",
-        detail: "Version control",
-      },
-      {
-        name: "GitHub",
-        icon: SiGithub,
-        color: "text-white",
-        detail: "Code collaboration",
-      },
-      {
-        name: "VS Code",
-        icon: VscVscode,
-        color: "text-blue-400",
-        detail: "Code editor",
-      },
-      {
-        name: "Figma",
-        icon: SiFigma,
-        color: "text-pink-300",
-        detail: "UI/UX design",
-      },
-      {
-        name: "Windows",
-        icon: FaWindows,
-        color: "text-sky-300",
-        detail: "Operating system",
-      },
-      {
-        name: "Vercel",
-        icon: SiVercel,
-        color: "text-white",
-        detail: "Web deployment",
-      },
-      {
-        name: "Netlify",
-        icon: SiNetlify,
-        color: "text-teal-300",
-        detail: "Web deployment",
-      },
+      { name: "Git", icon: SiGit, color: "text-orange-400", detail: "Version control" },
+      { name: "GitHub", icon: SiGithub, color: "text-white", detail: "Code collaboration" },
+      { name: "VS Code", icon: VscVscode, color: "text-blue-400", detail: "Code editor" },
+      { name: "Figma", icon: SiFigma, color: "text-pink-300", detail: "UI/UX design" },
+      { name: "Windows", icon: FaWindows, color: "text-sky-300", detail: "Operating system" },
+      { name: "Vercel", icon: SiVercel, color: "text-white", detail: "Web deployment" },
+      { name: "Netlify", icon: SiNetlify, color: "text-teal-300", detail: "Web deployment" },
     ],
   },
 ];
@@ -278,7 +164,7 @@ function Skills() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.08 }}
-                className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+                className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3"
               >
                 {group.skills.map((skill) => {
                   const Icon = skill.icon;
@@ -287,23 +173,23 @@ function Skills() {
                     <motion.article
                       key={skill.name}
                       variants={cardVariants}
-                      className="group relative flex min-h-[220px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-blue-400/10 bg-[#0B1020]/80 px-6 py-8 text-center shadow-lg shadow-blue-950/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-[#10182B] hover:shadow-xl hover:shadow-blue-950/20"
+                      className="group relative flex min-h-[190px] flex-col items-center justify-center overflow-hidden rounded-2xl border border-blue-400/10 bg-[#0B1020]/80 px-3 py-6 text-center shadow-lg shadow-blue-950/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-400/30 hover:bg-[#10182B] hover:shadow-xl hover:shadow-blue-950/20 sm:min-h-[220px] sm:px-6 sm:py-8"
                     >
                       {/* Card glow */}
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-blue-500/[0.04] via-transparent to-purple-500/[0.04] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                       {/* Technology Icon */}
                       <Icon
-                        className={`relative mb-6 h-12 w-12 transition-transform duration-300 group-hover:scale-110 ${skill.color}`}
+                        className={`relative mb-4 h-9 w-9 transition-transform duration-300 group-hover:scale-110 sm:mb-6 sm:h-12 sm:w-12 ${skill.color}`}
                       />
 
                       {/* Technology Name */}
-                      <h4 className="relative text-lg font-bold text-white sm:text-xl">
+                      <h4 className="relative text-base font-bold text-white sm:text-xl">
                         {skill.name}
                       </h4>
 
                       {/* Short Description */}
-                      <p className="relative mt-4 max-w-[260px] text-sm leading-6 text-blue-300/90">
+                      <p className="relative mt-3 max-w-[260px] text-xs leading-5 text-blue-300/90 sm:mt-4 sm:text-sm sm:leading-6">
                         {skill.detail}
                       </p>
 
