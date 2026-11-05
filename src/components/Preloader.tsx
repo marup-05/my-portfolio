@@ -6,23 +6,12 @@ function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-
-    const hidePreloader = () => {
-      timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 1400);
-    };
-
-    if (document.readyState === "complete") {
-      hidePreloader();
-    } else {
-      window.addEventListener("load", hidePreloader, { once: true });
-    }
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
 
     return () => {
       window.clearTimeout(timer);
-      window.removeEventListener("load", hidePreloader);
     };
   }, []);
 
@@ -31,9 +20,10 @@ function Preloader() {
       {isLoading && (
         <motion.div
           initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] flex min-h-screen items-center justify-center bg-[#080B16]"
+          className="fixed inset-0 z-[99999] flex min-h-screen items-center justify-center bg-[#080B16]"
         >
           <div className="flex flex-col items-center">
 
@@ -66,6 +56,7 @@ function Preloader() {
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
               className="text-2xl font-extrabold tracking-[0.25em] text-white"
             >
               MARUP<span className="text-purple-400">.</span>
@@ -99,6 +90,7 @@ function Preloader() {
             >
               LOADING PORTFOLIO...
             </motion.p>
+
           </div>
         </motion.div>
       )}
