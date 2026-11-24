@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "motion/react";
@@ -25,14 +26,27 @@ const projects = [
   },
   {
     number: "02",
-    title: "Fitlog",
-    category: "Fitness Web Application",
+    title: "WedPlan",
+    category: "Full-Stack Wedding Planning Marketplace",
     description:
-      "A fitness-focused web application built with Next.js and React, using reusable components and a responsive interface.",
-    image: "/fitlog.png",
-    tech: ["Next.js", "React", "TypeScript", "daisyUI", "Tailwind CSS"],
-    github: "https://github.com/marup-05/A6-Fit-Log",
-    demo: "https://a6-fit-log-theta.vercel.app/",
+      "A full-stack wedding planning marketplace where customers can discover and book wedding services, vendors can manage their services and bookings, and admins can oversee the platform. Includes authentication, service management, and Stripe subscriptions.",
+    image: "/wed-plan.png",
+    tech: [
+      "Next.js",
+      "Express.js",
+      "MongoDB",
+      "Better Auth",
+      "JWT",
+      "Stripe",
+      "ImgBB",
+      "next-themes",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
+    github: "https://github.com/marup-05/wedplan-client",
+    backendGithub: "https://github.com/marup-05/wedplan-server",
+    demo: "https://wedplan-client-livid-xi.vercel.app/",
     featured: false,
   },
   {
