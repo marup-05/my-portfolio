@@ -2,6 +2,8 @@
 "use client";
 
 import { motion } from "motion/react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa"; 
 
 const projects = [
   {
@@ -131,8 +133,8 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Project cards: 2 columns on desktop */}
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-7 md:grid-cols-2 md:gap-8 lg:gap-10">
+        {/* Project cards */}
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-7 md:grid-cols-2 md:gap-8 lg:gap-10">
           {projects.map((project, index) => (
             <motion.article
               key={project.number}
@@ -141,99 +143,117 @@ const Projects = () => {
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
               whileHover={{ y: -6 }}
-              className={`group overflow-hidden rounded-2xl border bg-[#100C1F] transition-colors duration-300 hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-950/20 ${
+              className={`group flex h-full flex-col overflow-hidden rounded-2xl border bg-gradient-to-b from-[#151022] to-[#0F0B1B] transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-950/30 ${
                 project.featured
                   ? "border-purple-500/40"
                   : "border-white/[0.08]"
               }`}
             >
               {/* Project screenshot */}
-              <div className="relative h-56 overflow-hidden bg-gradient-to-br from-purple-500/10 via-[#171126] to-fuchsia-500/10 sm:h-64">
+              <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-purple-500/10 via-[#171126] to-fuchsia-500/10">
                 <img
                   src={project.image}
                   alt={`${project.title} project screenshot`}
                   loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
 
                 {/* Screenshot overlay */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#100C1F]/60 via-transparent to-black/10" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#100C1F]/70 via-transparent to-black/10" />
 
-                <div className="absolute left-4 top-4 rounded-lg border border-white/10 bg-[#0B0915]/80 px-3 py-1.5 text-xs text-gray-200 backdrop-blur-md">
+                {/* Project number */}
+                <div className="absolute left-4 top-4 rounded-lg border border-white/10 bg-[#0B0915]/80 px-3 py-1.5 text-xs font-medium tracking-wide text-gray-200 backdrop-blur-md">
                   PROJECT {project.number}
                 </div>
 
+                {/* Featured badge */}
                 {project.featured && (
-                  <div className="absolute right-4 top-4 rounded-lg border border-purple-300/30 bg-purple-600/80 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md">
+                  <div className="absolute right-4 top-4 rounded-lg border border-purple-300/30 bg-purple-600/80 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-md">
                     Featured
                   </div>
                 )}
               </div>
 
               {/* Project details */}
-              <div className="p-5 sm:p-7">
-                <p className="text-xs font-medium uppercase tracking-[0.15em] text-purple-400">
+              <div className="flex flex-1 flex-col p-5 sm:p-7">
+                {/* Category */}
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-purple-400">
                   {project.category}
                 </p>
 
-                <h3 className="mt-3 text-xl font-semibold text-white transition-colors group-hover:text-purple-300 sm:text-2xl">
+                {/* Title */}
+                <h3 className="mt-3 text-xl font-bold text-white transition-colors duration-300 group-hover:text-purple-300 sm:text-2xl">
                   {project.title}
                 </h3>
 
+                {/* Description */}
                 <p className="mt-3 min-h-[84px] text-sm leading-7 text-gray-400">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.tech.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-lg border border-purple-500/15 bg-purple-500/[0.07] px-2.5 py-1.5 text-xs text-gray-300"
-                    >
-                      {technology}
-                    </span>
-                  ))}
+                <div className="mt-5">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    Technologies Used
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((technology) => (
+                      <span
+                        key={technology}
+                        className="rounded-lg border border-purple-500/20 bg-purple-500/[0.08] px-3 py-1.5 text-xs font-medium text-gray-300 transition-colors duration-300 hover:border-purple-400/50 hover:bg-purple-500/15 hover:text-white"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                {/* GitHub and Live Demo */}
-                <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-white/[0.08] pt-5">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} GitHub repository`}
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:border-purple-400/50 hover:bg-purple-500/10"
-                  >
-                    <span className="font-bold">GH</span>
-                    Frontend Repo
-                    <span>↗</span>
-                  </a>
+                {/* Repository and Demo buttons */}
+                <div className="mt-auto">
+                  <div className="my-6 border-t border-white/[0.08]" />
 
-                  {"backendGithub" in project && (
+                  <div className="flex flex-wrap items-center gap-3">
+                    {/* Frontend Repository */}
                     <a
-                      href={project.backendGithub}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`View ${project.title} backend GitHub repository`}
-                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-medium text-white transition hover:border-purple-400/50 hover:bg-purple-500/10"
+                      aria-label={`View ${project.title} frontend GitHub repository`}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-semibold text-gray-200 transition-all duration-300 hover:border-purple-400/50 hover:bg-purple-500/10 hover:text-white"
                     >
-                      <span className="font-bold">GH</span>
-                      Backend Repo
-                      <span>↗</span>
+                      <FaGithub size={17} />
+                      Frontend Repo
+                      <ExternalLink size={13} className="text-gray-500" />
                     </a>
-                  )}
 
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} live demo`}
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-fuchsia-600 px-4 py-2.5 text-sm font-medium text-white shadow-lg shadow-purple-950/20 transition hover:-translate-y-0.5 hover:shadow-purple-800/30"
-                  >
-                    Live Demo
-                    <span>↗</span>
-                  </a>
+                    {/* Backend Repository */}
+                    {"backendGithub" in project && (
+                      <a
+                        href={project.backendGithub}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} backend GitHub repository`}
+                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-4 py-2.5 text-sm font-semibold text-gray-200 transition-all duration-300 hover:border-purple-400/50 hover:bg-purple-500/10 hover:text-white"
+                      >
+                        <FaGithub size={17} />
+                        Backend Repo
+                        <ExternalLink size={13} className="text-gray-500" />
+                      </a>
+                    )}
+
+                    {/* Live Demo */}
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} live demo`}
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-fuchsia-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-950/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-purple-800/30"
+                    >
+                      Live Demo
+                      <ExternalLink size={14} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.article>
@@ -246,17 +266,20 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-12 text-center"
+          className="mt-14 text-center"
         >
           <a
             href="https://github.com/marup-05"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 rounded-xl border border-purple-500/30 px-6 py-3.5 text-sm font-medium text-white transition hover:border-purple-400/60 hover:bg-purple-500/10"
+            className="group inline-flex items-center gap-3 rounded-xl border border-purple-500/30 bg-purple-500/[0.04] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/60 hover:bg-purple-500/10 hover:shadow-lg hover:shadow-purple-950/20"
           >
-            <span className="font-bold">GH</span>
+            <FaGithub size={19} />
             Explore More on GitHub
-            <span>↗</span>
+            <ExternalLink
+              size={14}
+              className="text-gray-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
           </a>
         </motion.div>
       </div>
